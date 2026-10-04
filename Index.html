@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Monetisasi Saya</title>
+    
+    <style>
+        /* Desain halaman web utama */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 { color: #1a73e8; }
+        
+        /* ----------------------------------------------- */
+        /* STYLING NATIVE BANNER (Menyatu dengan Konten)   */
+        /* ----------------------------------------------- */
+        .native-banner-box {
+            margin: 30px 0;
+            padding: 15px;
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .native-banner-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: #1a73e8;
+        }
+        .native-image {
+            width: 120px;
+            height: 80px;
+            background-color: #ddd;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: #666;
+            font-weight: bold;
+        }
+        .native-content {
+            flex: 1;
+        }
+        .native-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+            color: #111;
+        }
+        .native-desc {
+            font-size: 14px;
+            color: #666;
+            margin: 0 0 8px 0;
+        }
+        .native-sponsored {
+            font-size: 11px;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Selamat Datang di Website Saya</h1>
+        <p>Ini adalah area konten artikel utama website Anda. Klik di mana saja pada halaman ini untuk memicu iklan Popunder yang berjalan di latar belakang.</p>
+        
+        <!-- ----------------------------------------------- -->
+        <!-- TEMPAT NATIVE BANNER MUNCUL                     -->
+        <!-- ----------------------------------------------- -->
+        <!-- Ganti 'https://link-iklan-anda.com' dengan Link/Smartlink iklan Anda -->
+        <a href="https://link-iklan-anda.com" target="_blank" class="native-banner-box">
+            <!-- Thumbnail Iklan (Bisa diganti URL Gambar asli) -->
+            <div class="native-image">IKLAN</div> 
+            <div class="native-content">
+                <div class="native-sponsored">Rekomendasi Untuk Anda</div>
+                <div class="native-title">Cara Instan Menghasilkan Cuan dari Internet Tahun Ini!</div>
+                <div class="native-desc">Banyak yang belum tahu trik rahasia ini. Klik di sini untuk membaca selengkapnya...</div>
+            </div>
+        </a>
+
+        <p>Ini adalah paragraf penutup artikel setelah iklan Native Banner dipasang secara rapi di tengah konten.</p>
+    </div>
+
+    <!-- ----------------------------------------------- -->
+    <!-- JAVASCRIPT UNTUK POPUNDER                       -->
+    <!-- ----------------------------------------------- -->
+    <script type="text/javascript">
+        // Ganti URL di bawah dengan Link/Smartlink Popunder dari Ad Network Anda
+        var urlPopunder = "https://link-iklan-anda.com"; 
+
+        document.addEventListener('click', function() {
+            // Memastikan popunder hanya muncul 1 kali per kunjungan halaman agar tidak mengganggu user berlebihan
+            if (!window.popunderTerbuka) {
+                window.popunderTerbuka = true;
+                
+                // Membuka tab baru di latar belakang
+                var tabBaru = window.open(urlPopunder, '_blank');
+                
+                // Trik memindahkan fokus kembali ke website utama Anda (Efek Popunder)
+                if (tabBaru) {
+                    tabBaru.blur();
+                    window.focus();
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
